@@ -65,7 +65,6 @@ export default class Home extends Component {
 	render() {
 		this.putDataInState(this);
 		const { dataFromDb } = this.state;
-		console.log('render state', this.state);
 		return (
 			<div className={`${style.home} page`}>
 				<h1>Les anniversaires à venir</h1>

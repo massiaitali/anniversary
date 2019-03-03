@@ -2,30 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="afea2836-9f6b-42e2-ad5a-ad8a42e47892" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/assets/db.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/dbCopy.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/icons/android-chrome-192x192.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/icons/android-chrome-512x512.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/icons/apple-touch-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/icons/favicon-16x16.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/icons/favicon-32x32.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/icons/mstile-150x150.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/profiles/caroline.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/profiles/mami.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/profiles/massi.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/anniversary/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/anniversary/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/app.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/header/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/header/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/manifest.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/404/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/404/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/home/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/home/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,32 +18,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="59" selection-start-line="9" selection-start-column="59" selection-end-line="9" selection-end-column="59" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/anniversary/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="254">
-              <caret line="25" selection-start-line="25" selection-end-line="25" />
-              <folding>
-                <element signature="e#0#38#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/routes/home/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="26" column="21" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
-              <folding>
-                <element signature="e#0#38#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="150">
+              <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -127,9 +80,9 @@
         <option value="$PROJECT_DIR$/src/index.js" />
         <option value="$PROJECT_DIR$/src/assets/db.json" />
         <option value="$PROJECT_DIR$/src/components/anniversary/index.js" />
-        <option value="$PROJECT_DIR$/src/routes/home/index.js" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/src/routes/home/index.js" />
       </list>
     </option>
   </component>
@@ -152,6 +105,11 @@
               <item name="anniversary" type="b2602c69:ProjectViewProjectNode" />
               <item name="anniversary" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="anniversary" type="b2602c69:ProjectViewProjectNode" />
+              <item name="anniversary" type="462c0819:PsiDirectoryNode" />
+              <item name="build" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -161,7 +119,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551656538480" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551656763656" />
     <property name="js.last.introduce.type" value="CONST" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -206,38 +164,37 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1551565894123</updated>
-      <workItem from="1551565897729" duration="20320000" />
+      <workItem from="1551565897729" duration="20607000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20320000" />
+    <option name="totallyTimeSpent" value="20607000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Designer" order="0" />
       <window_info id="UI Designer" order="1" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Favorites" order="3" sideWeight="0.50053704" side_tool="true" weight="0.24969475" />
       <window_info id="Image Layers" order="4" />
-      <window_info content_ui="combo" id="Project" order="5" sideWeight="0.49946293" visible="true" weight="0.24969475" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" sideWeight="0.49946293" visible="true" weight="0.24969475" />
       <window_info id="Structure" order="6" sideWeight="0.50053704" side_tool="true" weight="0.24969475" />
-      <window_info anchor="bottom" id="TypeScript" />
-      <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="1" weight="0.32959184" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="2" visible="true" weight="0.32959184" />
-      <window_info anchor="bottom" id="Database Changes" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="4" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="5" />
-      <window_info anchor="bottom" id="Find" order="6" />
-      <window_info anchor="bottom" id="Run" order="7" />
-      <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
-      <window_info anchor="bottom" id="Messages" order="10" />
-      <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="12" />
+      <window_info anchor="bottom" id="TypeScript" order="0" />
+      <window_info anchor="bottom" id="Docker" order="1" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="2" sideWeight="0.4993895" visible="true" weight="0.32959184" />
+      <window_info anchor="bottom" id="Terminal" order="3" sideWeight="0.4993895" weight="0.32959184" />
+      <window_info anchor="bottom" id="Database Changes" order="4" />
+      <window_info anchor="bottom" id="Event Log" order="5" sideWeight="0.50061053" side_tool="true" visible="true" weight="0.32959184" />
+      <window_info anchor="bottom" id="Message" order="6" />
+      <window_info anchor="bottom" id="Find" order="7" />
+      <window_info anchor="bottom" id="Run" order="8" />
+      <window_info anchor="bottom" id="Debug" order="9" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
+      <window_info anchor="bottom" id="Messages" order="11" />
+      <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="13" />
       <window_info anchor="right" id="Theme Preview" order="0" />
       <window_info anchor="right" id="Database" order="1" />
       <window_info anchor="right" id="Capture Analysis" order="2" />
@@ -413,6 +370,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/anniversary/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="254">
@@ -425,21 +393,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/routes/home/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="21" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
+        <state relative-caret-position="330">
+          <caret line="22" column="19" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="59" selection-start-line="9" selection-start-column="59" selection-end-line="9" selection-end-column="59" />
+        <state relative-caret-position="150">
+          <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
         </state>
       </provider>
     </entry>
