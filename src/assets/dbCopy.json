@@ -1,0 +1,28 @@
+{
+  "dataAnniversary": [
+    {
+      "id": 1,
+      "logo": "caroline.jpeg",
+      "firstName": "Caroline",
+      "lastName": "Eche",
+      "dateOfBirth": "21/12/1997",
+      "placeOfBirth": "Chartres"
+    },
+    {
+      "id": 2,
+      "logo": "massi.jpeg",
+      "firstName": "Massinissa",
+      "lastName": "AIT ALI",
+      "dateOfBirth": "01/08/1995",
+      "placeOfBirth": "Toulouse"
+    },
+    {
+      "id": 3,
+      "logo": "mami.jpeg",
+      "firstName": "Monique",
+      "lastName": "Boursi",
+      "dateOfBirth": "28/01/1960",
+      "placeOfBirth": "Chateaudun"
+    }
+  ]
+}
