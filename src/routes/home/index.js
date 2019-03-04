@@ -71,7 +71,9 @@ export default class Home extends Component {
 		return (
 			<div className={`${style.home} page`}>
 				<h1>Les anniversaires à venir</h1>
-				{this.getFinalData(this.state.dataFromDb)}
+					<div className={`${style.flex}`}>
+						{this.getFinalData(this.state.dataFromDb)}
+					</div>
 			</div>
 		);
 	}

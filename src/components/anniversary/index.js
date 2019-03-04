@@ -30,16 +30,14 @@ export default class Anniversary extends Component {
 				<Card>
 					<div className={style.cardHeader}>
 						<h2 className=" mdc-typography--title">{firstName} {lastName}</h2>
-						<img alt={firstName} src={'../../assets/profiles/'+logo} className={style.logo}/>
+						<img alt={firstName} src={logo} className={style.logo}/>
 						<div className=" mdc-typography--caption">Dans {nbDays} jours</div>
 					</div>
 					<div className={style.cardBody}>
 						Née le {dateOfBirth} à {placeOfBirth}
 					</div>
 					<Card.Actions>
-						<Card.ActionIcons>
-							<Card.ActionIcon onClick={ e => this.onClickDelete(id) }>delete</Card.ActionIcon>
-						</Card.ActionIcons>
+						<Card.ActionIcon onClick={ e => this.onClickDelete(id) }>delete</Card.ActionIcon>
 					</Card.Actions>
 				</Card>
 			</div>

@@ -3,3 +3,8 @@
 	min-height: 100%;
 	width: 100%;
 }
+.flex {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;  /* NEW */
+}

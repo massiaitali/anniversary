@@ -1,7 +1,5 @@
 .add {
 	padding: 2rem;
-	min-height: 100%;
-	width: 100%;
 }
 .card {
 	margin-top: 1rem;
@@ -9,11 +7,11 @@
 .cardBody {
 	padding: 1.6rem;
 }
-@media (min-width: 1281px) {
+.fieldInput {
+	margin-bottom: 1rem;
+}
+@media (min-width: 1000px) {
 	.card {
 		max-width: 30%;
-		margin: auto;
-		width: 50%;
-		padding: 1rem;
 	}
 }

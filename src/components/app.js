@@ -3,7 +3,7 @@ import { Router } from 'preact-router';
 
 import Header from './header';
 import Home from '../routes/home';
-import Add from '../routes/Add';
+import Add from '../routes/adder';
 import NotFound from '../routes/404';
 
 export default class App extends Component {
