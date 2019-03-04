@@ -8,6 +8,11 @@ import 'preact-material-components/Icon/style.css';
 export default class Home extends Component {
 	constructor(props) {
 		super(props);
+		this.state = { dataFromDb: [] };
+	}
+
+	componentDidMount() {
+		this.putDataInState();
 	}
 
 	putDataInState() {
@@ -16,7 +21,8 @@ export default class Home extends Component {
 				'http://localhost:3000', 'dataAnniversary').body
 		);
 		const anniversaryArray = this.addNbDaysInObject(data).sort(this.compare);
-		this.state = { dataFromDb: anniversaryArray };
+		//this.state = {dataFromDb: anniversaryArray};
+		this.setState({ dataFromDb: anniversaryArray });
 	}
 
 	getDataFromDb(dbName, dataName) {
@@ -63,12 +69,10 @@ export default class Home extends Component {
 	}
 
 	render() {
-		this.putDataInState(this);
-		const { dataFromDb } = this.state;
 		return (
 			<div className={`${style.home} page`}>
 				<h1>Les anniversaires à venir</h1>
-				{this.getFinalData(dataFromDb)}
+				{this.getFinalData(this.state.dataFromDb)}
 			</div>
 		);
 	}

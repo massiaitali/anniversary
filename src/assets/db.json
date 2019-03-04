@@ -15,6 +15,14 @@
       "lastName": "AIT ALI",
       "dateOfBirth": "01/08/1995",
       "placeOfBirth": "Toulouse"
+    },
+    {
+      "id": 3,
+      "logo": "mami.jpeg",
+      "firstName": "Monique",
+      "lastName": "Boursi",
+      "dateOfBirth": "28/01/1960",
+      "placeOfBirth": "Chateaudun"
     }
   ]
 }
