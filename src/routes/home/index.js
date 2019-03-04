@@ -21,7 +21,6 @@ export default class Home extends Component {
 				'http://localhost:3000', 'dataAnniversary').body
 		);
 		const anniversaryArray = this.addNbDaysInObject(data).sort(this.compare);
-		//this.state = {dataFromDb: anniversaryArray};
 		this.setState({ dataFromDb: anniversaryArray });
 	}
 

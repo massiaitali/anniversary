@@ -1,14 +1,14 @@
 .home {
 	margin-top: 1rem;
-	padding: 20px;
+	padding: 2rem;
 	min-height: 100%;
 	width: 100%;
 }
 
 .cardHeader {
-  padding: 16px;
+  padding: 1.6rem;
 }
 
 .cardBody {
-  padding: 16px;
+  padding: 1.6rem;
 }

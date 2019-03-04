@@ -74,6 +74,10 @@ export default class Header extends Component {
 							<List.ItemGraphic>home</List.ItemGraphic>
 							Accueil
 						</Drawer.DrawerItem>
+						<Drawer.DrawerItem selected={props.selectedRoute === '/add'} onClick={this.goAdd}>
+							<List.ItemGraphic>add</List.ItemGraphic>
+							Ajouter
+						</Drawer.DrawerItem>
 					</Drawer.DrawerContent>
 				</Drawer>
 				<Dialog ref={this.dialogRef}>

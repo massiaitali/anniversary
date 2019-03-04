@@ -1,7 +1,6 @@
 import { h, Component } from 'preact';
 import Card from 'preact-material-components/Card';
 import 'preact-material-components/Card/style.css';
-import 'preact-material-components/IconButton/style.css';
 import style from './style';
 import request from 'sync-request';
 
@@ -38,7 +37,9 @@ export default class Anniversary extends Component {
 						Née le {dateOfBirth} à {placeOfBirth}
 					</div>
 					<Card.Actions>
-						<Card.ActionButton><button onClick={ e => this.onClickDelete(id) }>Delete</button></Card.ActionButton>
+						<Card.ActionIcons>
+							<Card.ActionIcon onClick={ e => this.onClickDelete(id) }>delete</Card.ActionIcon>
+						</Card.ActionIcons>
 					</Card.Actions>
 				</Card>
 			</div>

@@ -3,6 +3,7 @@ import { Router } from 'preact-router';
 
 import Header from './header';
 import Home from '../routes/home';
+import Add from '../routes/Add';
 import NotFound from '../routes/404';
 
 export default class App extends Component {
@@ -22,6 +23,7 @@ export default class App extends Component {
 				<Header selectedRoute={this.state.currentUrl} />
 				<Router onChange={this.handleRoute}>
 					<Home path="/" />
+					<Add path="/add" />
 					<NotFound default />
 				</Router>
 			</div>

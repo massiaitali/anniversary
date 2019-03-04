@@ -7,13 +7,14 @@ export default class NotFound extends Component {
 	render() {
 		return (
 			<div className={`${style.home} page`}>
+				<h2 className=" mdc-typography--title">La page n'existe pas</h2>
 				<Card>
-					<div className={style.cardHeader}>
-						<h2 className=" mdc-typography--title">Aucune url éxiste</h2>
-					</div>
 					<div className={style.cardBody}>
 						Si le problème persiste, merci de le signaler
 					</div>
+					<Card.Actions>
+						<Card.ActionButton><button><a className="mailto" href="mailto:massi.aitali@gmail.com">Signaler</a></button></Card.ActionButton>
+					</Card.Actions>
 				</Card>
 			</div>
 		);
