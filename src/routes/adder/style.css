@@ -10,8 +10,3 @@
 .fieldInput {
 	margin-bottom: 1rem;
 }
-@media (min-width: 1000px) {
-	.card {
-		max-width: 30%;
-	}
-}

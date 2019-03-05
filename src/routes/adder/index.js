@@ -4,25 +4,32 @@ import Card from 'preact-material-components/Card';
 import 'preact-material-components/Card/style.css';
 import TextField, { Input } from 'preact-material-components/TextField';
 import 'preact-material-components/TextField/style.css';
-import request from 'sync-request';
+import axios from 'axios';
+import LayoutGrid from 'preact-material-components/LayoutGrid';
+import 'preact-material-components/LayoutGrid/style.css';
 
 export default class Add extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			logo : "",
-			firstName : "",
-			lastName : "",
-			dateOfBirth : "",
-			placeOfBirth : ""
+			logo: "",
+			firstName: "",
+			lastName: "",
+			dateOfBirth: "",
+			placeOfBirth: ""
 		};
 	}
 
 	addUserInDb(newBirthday, dbName, dataName){
-		return request(
-			'PUT',
-			`${dbName}/${dataName}/10`,
-			{body: newBirthday}
+		return axios.post(
+			`${dbName}/${dataName}`,
+			newBirthday,
+			{
+				headers: {
+					"Accept": "application/json",
+					"Content-type": "application/json"
+				}
+			}
 		);
 	}
 
@@ -30,8 +37,18 @@ export default class Add extends Component {
 		let formVals = this.state;
 		const oneIsNotCompleted = Object.keys(formVals).some(key => formVals[key] === '');
 		if(!oneIsNotCompleted) {
-			formVals.dateOfBirth = formVals.dateOfBirth.replace('-', '/').replace('-', '/');
-			this.addUserInDb(formVals, 'http://localhost:3000', 'dataAnniversary')
+			const dateArray = formVals.dateOfBirth.split('-');
+			formVals.dateOfBirth = `${dateArray[2]}/${dateArray[1]}/${dateArray[0]}`;
+			formVals = JSON.stringify(formVals);
+			this.addUserInDb(formVals, 'http://localhost:3000', 'dataAnniversary').then(res => {
+				this.setState({
+					logo: "",
+					firstName: "",
+					lastName: "",
+					dateOfBirth: "",
+					placeOfBirth: ""
+				});
+			});
 		}
 	}
 
@@ -45,58 +62,69 @@ export default class Add extends Component {
 		return (
 			<div className={`${style.add} page`}>
 				<h1>Ajouter un anniversaire</h1>
-				<Card className={style.card}>
-					<div className={style.cardBody}>
-						<div className={style.fieldInput}>
-							<TextField
-								helperText="Url du logo"
-								helperTextPersistent
-								type="text"
-								fullwidth={true}
-								onKeyUp={(e) => this.addValueInState(e, 'logo')}
-							/>
-						</div>
-						<div className={style.fieldInput}>
-							<TextField
-								helperText="Prénom"
-								helperTextPersistent
-								type="text"
-								fullwidth={true}
-								onKeyUp={(e) => this.addValueInState(e, 'firstName')}
-							/>
-						</div>
-						<div className={style.fieldInput}>
-							<TextField
-								helperText="Nom"
-								helperTextPersistent
-								type="text"
-								fullwidth={true}
-								onKeyUp={(e) => this.addValueInState(e, 'lastName')}
-							/>
-						</div>
-						<div className={style.fieldInput}>
-							<TextField
-								helperText="Date de naissance"
-								helperTextPersistent
-								type="date"
-								fullwidth={true}
-								onKeyUp={(e) => this.addValueInState(e, 'dateOfBirth')}
-							/>
-						</div>
-						<div className={style.fieldInput}>
-							<TextField
-								helperText="Lieu de naissance"
-								helperTextPersistent
-								type="text"
-								fullwidth={true}
-								onKeyUp={(e) => this.addValueInState(e, 'placeOfBirth')}
-							/>
-						</div>
-					</div>
-					<Card.Actions>
-							<Card.ActionIcon onClick={ e => this.submit() }>add</Card.ActionIcon>
-					</Card.Actions>
-				</Card>
+				<LayoutGrid>
+					<LayoutGrid.Inner>
+						<LayoutGrid.Cell cols="6">
+							<Card className={style.card}>
+								<div className={style.cardBody}>
+									<div className={style.fieldInput}>
+										<TextField
+											helperText="Url du logo"
+											helperTextPersistent
+											type="text"
+											fullwidth={true}
+											onKeyUp={(e) => this.addValueInState(e, 'logo')}
+											value={this.state.logo}
+										/>
+									</div>
+									<div className={style.fieldInput}>
+										<TextField
+											helperText="Prenom"
+											helperTextPersistent
+											type="text"
+											fullwidth={true}
+											onKeyUp={(e) => this.addValueInState(e, 'firstName')}
+											value={this.state.firstName}
+										/>
+									</div>
+									<div className={style.fieldInput}>
+										<TextField
+											helperText="Nom"
+											helperTextPersistent
+											type="text"
+											fullwidth={true}
+											onKeyUp={(e) => this.addValueInState(e, 'lastName')}
+											value={this.state.lastName}
+										/>
+									</div>
+									<div className={style.fieldInput}>
+										<TextField
+											helperText="Date de naissance"
+											helperTextPersistent
+											type="date"
+											fullwidth={true}
+											onKeyUp={(e) => this.addValueInState(e, 'dateOfBirth')}
+											value={this.state.dateOfBirth}
+										/>
+									</div>
+									<div className={style.fieldInput}>
+										<TextField
+											helperText="Lieu de naissance"
+											helperTextPersistent
+											type="text"
+											fullwidth={true}
+											onKeyUp={(e) => this.addValueInState(e, 'placeOfBirth')}
+											value={this.state.placeOfBirth}
+										/>
+									</div>
+								</div>
+								<Card.Actions>
+										<Card.ActionIcon onClick={ e => this.submit() }>add</Card.ActionIcon>
+								</Card.Actions>
+							</Card>
+						</LayoutGrid.Cell>
+					</LayoutGrid.Inner>
+				</LayoutGrid>
 			</div>
 		);
 	}

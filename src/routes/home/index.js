@@ -1,9 +1,11 @@
 import { h, Component } from 'preact';
 import style from './style';
 import Anniversary from '../../components/anniversary';
-import request from 'sync-request';
+import axios from 'axios';
 import 'preact-material-components/Button/style.css';
 import 'preact-material-components/Icon/style.css';
+import LayoutGrid from 'preact-material-components/LayoutGrid';
+import 'preact-material-components/LayoutGrid/style.css';
 
 export default class Home extends Component {
 	constructor(props) {
@@ -16,16 +18,16 @@ export default class Home extends Component {
 	}
 
 	putDataInState() {
-		const data = JSON.parse(
-			this.getDataFromDb(
-				'http://localhost:3000', 'dataAnniversary').body
-		);
-		const anniversaryArray = this.addNbDaysInObject(data).sort(this.compare);
-		this.setState({ dataFromDb: anniversaryArray });
+		this.getDataFromDb('http://localhost:3000', 'dataAnniversary')
+			.then( anniversaryArray => {
+				anniversaryArray = this.addNbDaysInObject(anniversaryArray.data).sort(this.compare);
+				this.setState({ dataFromDb: anniversaryArray });
+			});
 	}
 
 	getDataFromDb(dbName, dataName) {
-		return request('get',`${dbName}/${dataName}`);
+		//return request('get',`${dbName}/${dataName}`);
+		return axios.get(`${dbName}/${dataName}`);
 	}
 
 
@@ -53,16 +55,18 @@ export default class Home extends Component {
 	getFinalData(dataFromDb) {
 		const allAnniversary = dataFromDb.map(single => {
 			return(
-			<Anniversary
-				id={single.id}
-				firstName={single.firstName}
-				lastName={single.lastName}
-				dateOfBirth={single.dateOfBirth}
-				placeOfBirth={single.placeOfBirth}
-				logo={single.logo}
-				nbDays={single.nbDays}
-				context={this}
-			/>);
+				<LayoutGrid.Cell cols="4">
+					<Anniversary
+						id={single.id}
+						firstName={single.firstName}
+						lastName={single.lastName}
+						dateOfBirth={single.dateOfBirth}
+						placeOfBirth={single.placeOfBirth}
+						logo={single.logo}
+						nbDays={single.nbDays}
+						context={this}
+					/>
+				</LayoutGrid.Cell>);
 		});
 		return allAnniversary;
 	}
@@ -71,9 +75,13 @@ export default class Home extends Component {
 		return (
 			<div className={`${style.home} page`}>
 				<h1>Les anniversaires à venir</h1>
-					<div className={`${style.flex}`}>
-						{this.getFinalData(this.state.dataFromDb)}
-					</div>
+				<div className={`${style.containerCard}`}>
+					<LayoutGrid>
+						<LayoutGrid.Inner>
+							{this.getFinalData(this.state.dataFromDb)}
+						</LayoutGrid.Inner>
+					</LayoutGrid>
+				</div>
 			</div>
 		);
 	}

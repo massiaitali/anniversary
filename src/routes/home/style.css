@@ -3,8 +3,6 @@
 	min-height: 100%;
 	width: 100%;
 }
-.flex {
-	display: flex;
+.containerCard {
 	justify-content: space-between;
-	flex-wrap: wrap;  /* NEW */
 }
