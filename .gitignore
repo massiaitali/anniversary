@@ -30,7 +30,8 @@ coverage
 
 # Intellij
 .idea
-.idea/*.*
+.idea/*.xml
+.idea/*/*.xml
 
 # Bower dependency directory (https://bower.io/)
 bower_components
