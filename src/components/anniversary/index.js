@@ -1,13 +1,21 @@
 import { h, Component } from 'preact';
 import Card from 'preact-material-components/Card';
-import 'preact-material-components/Card/style.css';
+import Editer from '../editer'
 import axios from 'axios';
 import style from './style';
+import 'preact-material-components/Card/style.css';
 
 export default class Anniversary extends Component {
 
 	constructor(props) {
 		super(props);
+		this.state = {
+			logo: '',
+			firstName: '',
+			lastName: '',
+			dateOfBirth: '',
+			placeOfBirth: '',
+		};
 	}
 
 	deleteDataFromDb(dbName, dataName, id) {
@@ -15,9 +23,9 @@ export default class Anniversary extends Component {
 	}
 
 	onClickDelete(id){
-		const { context } = this.props;
+		const { parentContext } = this.props;
 		this.deleteDataFromDb('http://localhost:3000', 'dataAnniversary', id)
-			.then(res => context.putDataInState())
+			.then(res => parentContext.putDataInState());
 
 	}
 
@@ -38,9 +46,18 @@ export default class Anniversary extends Component {
 					</div>
 					<Card.Actions>
 						<Card.ActionIcons>
-							<Card.ActionIcon>edit</Card.ActionIcon>
+							<Editer
+								id={id}
+								grandParentContext={this.props.parentContext}
+								id={id}
+								firstName={firstName}
+								lastName={lastName}
+								dateOfBirth={dateOfBirth}
+								placeOfBirth={placeOfBirth}
+								logo={logo}
+							/>
 						</Card.ActionIcons>
-						<Card.ActionIcon onClick={ e => this.onClickDelete(id) }>delete</Card.ActionIcon>
+						<Card.ActionIcon onClick={e => this.onClickDelete(id)}>delete</Card.ActionIcon>
 					</Card.Actions>
 				</Card>
 			</div>

@@ -1,22 +1,22 @@
 import { h, Component } from 'preact';
 import style from './style';
 import Card from 'preact-material-components/Card';
-import 'preact-material-components/Card/style.css';
-import TextField, { Input } from 'preact-material-components/TextField';
-import 'preact-material-components/TextField/style.css';
 import axios from 'axios';
 import LayoutGrid from 'preact-material-components/LayoutGrid';
+import TextField from 'preact-material-components/TextField';
+import 'preact-material-components/Card/style.css';
+import 'preact-material-components/TextField/style.css';
 import 'preact-material-components/LayoutGrid/style.css';
 
 export default class Add extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			logo: "",
-			firstName: "",
-			lastName: "",
-			dateOfBirth: "",
-			placeOfBirth: ""
+			logo: '',
+			firstName: '',
+			lastName: '',
+			dateOfBirth: '',
+			placeOfBirth: ''
 		};
 	}
 
@@ -26,8 +26,8 @@ export default class Add extends Component {
 			newBirthday,
 			{
 				headers: {
-					"Accept": "application/json",
-					"Content-type": "application/json"
+					Accept: 'application/json',
+					'Content-type': 'application/json'
 				}
 			}
 		);
@@ -36,17 +36,17 @@ export default class Add extends Component {
 	submit() {
 		let formVals = this.state;
 		const oneIsNotCompleted = Object.keys(formVals).some(key => formVals[key] === '');
-		if(!oneIsNotCompleted) {
+		if (!oneIsNotCompleted) {
 			const dateArray = formVals.dateOfBirth.split('-');
 			formVals.dateOfBirth = `${dateArray[2]}/${dateArray[1]}/${dateArray[0]}`;
 			formVals = JSON.stringify(formVals);
 			this.addUserInDb(formVals, 'http://localhost:3000', 'dataAnniversary').then(res => {
 				this.setState({
-					logo: "",
-					firstName: "",
-					lastName: "",
-					dateOfBirth: "",
-					placeOfBirth: ""
+					logo: '',
+					firstName: '',
+					lastName: '',
+					dateOfBirth: '',
+					placeOfBirth: ''
 				});
 			});
 		}
@@ -72,7 +72,7 @@ export default class Add extends Component {
 											helperText="Url du logo"
 											helperTextPersistent
 											type="text"
-											fullwidth={true}
+											fullwidth
 											onKeyUp={(e) => this.addValueInState(e, 'logo')}
 											value={this.state.logo}
 										/>
@@ -82,7 +82,7 @@ export default class Add extends Component {
 											helperText="Prenom"
 											helperTextPersistent
 											type="text"
-											fullwidth={true}
+											fullwidth
 											onKeyUp={(e) => this.addValueInState(e, 'firstName')}
 											value={this.state.firstName}
 										/>
@@ -92,7 +92,7 @@ export default class Add extends Component {
 											helperText="Nom"
 											helperTextPersistent
 											type="text"
-											fullwidth={true}
+											fullwidth
 											onKeyUp={(e) => this.addValueInState(e, 'lastName')}
 											value={this.state.lastName}
 										/>
@@ -102,7 +102,7 @@ export default class Add extends Component {
 											helperText="Date de naissance"
 											helperTextPersistent
 											type="date"
-											fullwidth={true}
+											fullwidth
 											onKeyUp={(e) => this.addValueInState(e, 'dateOfBirth')}
 											value={this.state.dateOfBirth}
 										/>
@@ -112,14 +112,14 @@ export default class Add extends Component {
 											helperText="Lieu de naissance"
 											helperTextPersistent
 											type="text"
-											fullwidth={true}
+											fullwidth
 											onKeyUp={(e) => this.addValueInState(e, 'placeOfBirth')}
 											value={this.state.placeOfBirth}
 										/>
 									</div>
 								</div>
 								<Card.Actions>
-										<Card.ActionIcon onClick={ e => this.submit() }>add</Card.ActionIcon>
+									<Card.ActionIcon onClick={e => this.submit()}>add</Card.ActionIcon>
 								</Card.Actions>
 							</Card>
 						</LayoutGrid.Cell>

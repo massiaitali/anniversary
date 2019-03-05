@@ -36,14 +36,14 @@ export default class Home extends Component {
 		const todayDate = new Date();
 		const isBeforeTodayAndBirthday = todayDate.getMonth() * 30 + todayDate.getDay() - dateArray[1] * 30 + dateArray[0] < 0;
 		let annivDate;
-		if(isBeforeTodayAndBirthday)
+		if (isBeforeTodayAndBirthday)
 			annivDate = new Date(todayDate.getFullYear(),dateArray[1]-1,dateArray[0]);
 		else  annivDate = new Date(todayDate.getFullYear()+1,dateArray[1]-1,dateArray[0]);
 		return Math.round((annivDate-todayDate)/(1000*60*60*24));
 	}
 
 	addNbDaysInObject(annivArray) {
-		return annivArray.map(anniv => anniv = {...anniv, 'nbDays' : this.howManyDays(anniv.dateOfBirth)});
+		return annivArray.map(anniv => anniv = { ...anniv, nbDays: this.howManyDays(anniv.dateOfBirth) });
 	}
 
 	compare(a, b) {
@@ -53,21 +53,19 @@ export default class Home extends Component {
 	}
 
 	getFinalData(dataFromDb) {
-		const allAnniversary = dataFromDb.map(single => {
-			return(
-				<LayoutGrid.Cell cols="4">
-					<Anniversary
-						id={single.id}
-						firstName={single.firstName}
-						lastName={single.lastName}
-						dateOfBirth={single.dateOfBirth}
-						placeOfBirth={single.placeOfBirth}
-						logo={single.logo}
-						nbDays={single.nbDays}
-						context={this}
-					/>
-				</LayoutGrid.Cell>);
-		});
+		const allAnniversary = dataFromDb.map(single => (
+			<LayoutGrid.Cell cols="4">
+				<Anniversary
+					id={single.id}
+					firstName={single.firstName}
+					lastName={single.lastName}
+					dateOfBirth={single.dateOfBirth}
+					placeOfBirth={single.placeOfBirth}
+					logo={single.logo}
+					nbDays={single.nbDays}
+					parentContext={this}
+				/>
+			</LayoutGrid.Cell>));
 		return allAnniversary;
 	}
 

@@ -52,7 +52,7 @@ export default class Header extends Component {
 	}
 
 	render(props) {
-		if(props.selectedRoute !== undefined) console.log('route',props.selectedRoute);
+		if (props.selectedRoute !== undefined) console.log('route',props.selectedRoute);
 		return (
 			<div>
 				<TopAppBar className="topappbar">
