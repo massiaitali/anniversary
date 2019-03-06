@@ -22,6 +22,17 @@ export default class Editer extends Component {
 		};
 	}
 
+	componentWillReceiveProps(nextProps) {
+		const dateArray = nextProps.dateOfBirth.split('/');
+		this.setState({
+			logo: nextProps.logo,
+			firstName: nextProps.firstName,
+			lastName: nextProps.lastName,
+			dateOfBirth: `${dateArray[2]}-${dateArray[1]}-${dateArray[0]}`,
+			placeOfBirth: nextProps.placeOfBirth
+		});
+	}
+
 	addUserInDb(newBirthday, dbName, dataName, id){
 		return axios.put(
 			`${dbName}/${dataName}/${id}`,
@@ -61,7 +72,6 @@ export default class Editer extends Component {
 	}
 
 	render() {
-		const { firstName, lastName, dateOfBirth, placeOfBirth, logo } = this.props;
 		return (
 			<div>
 				<Card.ActionIcon onClick={ ()=>{ this.editBirthday.MDComponent.show(); } }>edit</Card.ActionIcon>

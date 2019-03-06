@@ -49,7 +49,6 @@ export default class Anniversary extends Component {
 							<Editer
 								id={id}
 								grandParentContext={this.props.parentContext}
-								id={id}
 								firstName={firstName}
 								lastName={lastName}
 								dateOfBirth={dateOfBirth}
