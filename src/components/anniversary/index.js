@@ -1,8 +1,8 @@
 import { h, Component } from 'preact';
 import Card from 'preact-material-components/Card';
 import Editer from '../editer'
-import axios from 'axios';
 import style from './style';
+import { deleteDataFromDb } from '../../Utils'
 import 'preact-material-components/Card/style.css';
 
 export default class Anniversary extends Component {
@@ -18,13 +18,9 @@ export default class Anniversary extends Component {
 		};
 	}
 
-	deleteDataFromDb(dbName, dataName, id) {
-		return axios.delete(`${dbName}/${dataName}/${id}`);
-	}
-
 	onClickDelete(id){
 		const { parentContext } = this.props;
-		this.deleteDataFromDb('http://localhost:3000', 'dataAnniversary', id)
+		deleteDataFromDb('http://localhost:3000', 'dataAnniversary', id)
 			.then(res => parentContext.putDataInState());
 
 	}

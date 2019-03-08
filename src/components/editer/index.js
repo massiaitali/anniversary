@@ -2,48 +2,33 @@ import { h, Component } from 'preact';
 import Card from 'preact-material-components/Card';
 import Dialog from 'preact-material-components/Dialog';
 import TextField from 'preact-material-components/TextField';
+import style from './style';
+import { dataFromFrenchFormatToInput, updateUserInDb, dataFromInputToFrenchFormat } from '../../Utils'
 import 'preact-material-components/Card/style.css';
 import 'preact-material-components/Dialog/style.css';
 import 'preact-material-components/TextField/style.css';
-import style from './style';
-import axios from 'axios';
 
 
 export default class Editer extends Component {
 	constructor(props) {
 		super(props);
-		const dateArray = this.props.dateOfBirth.split('/');
 		this.state = {
 			logo: this.props.logo,
 			firstName: this.props.firstName,
 			lastName: this.props.lastName,
-			dateOfBirth: `${dateArray[2]}-${dateArray[1]}-${dateArray[0]}`,
+			dateOfBirth: dataFromFrenchFormatToInput(this.props.dateOfBirth),
 			placeOfBirth: this.props.placeOfBirth
 		};
 	}
 
 	componentWillReceiveProps(nextProps) {
-		const dateArray = nextProps.dateOfBirth.split('/');
 		this.setState({
 			logo: nextProps.logo,
 			firstName: nextProps.firstName,
 			lastName: nextProps.lastName,
-			dateOfBirth: `${dateArray[2]}-${dateArray[1]}-${dateArray[0]}`,
+			dateOfBirth: dataFromFrenchFormatToInput(nextProps.dateOfBirth),
 			placeOfBirth: nextProps.placeOfBirth
 		});
-	}
-
-	addUserInDb(newBirthday, dbName, dataName, id){
-		return axios.put(
-			`${dbName}/${dataName}/${id}`,
-			newBirthday,
-			{
-				headers: {
-					Accept: 'application/json',
-					'Content-type': 'application/json'
-				}
-			}
-		);
 	}
 
 	submit() {
@@ -51,14 +36,12 @@ export default class Editer extends Component {
 		let formVals = this.state;
 		const oneIsNotCompleted = Object.keys(formVals).some(key => formVals[key] === '');
 		if (!oneIsNotCompleted) {
-			const dateArray = formVals.dateOfBirth.split('-');
-			formVals.dateOfBirth = `${dateArray[2]}/${dateArray[1]}/${dateArray[0]}`;
+			formVals.dateOfBirth = dataFromInputToFrenchFormat(formVals.dateOfBirth);
 			formVals = JSON.stringify(formVals);
-			this.addUserInDb(formVals, 'http://localhost:3000', 'dataAnniversary', id)
+			updateUserInDb(formVals, 'http://localhost:3000', 'dataAnniversary', id)
 				.then(res => {
 					formVals = JSON.parse(formVals);
-					const dateArray = formVals.dateOfBirth.split('/');
-					formVals.dateOfBirth = `${dateArray[2]}-${dateArray[1]}-${dateArray[0]}`;
+					formVals.dateOfBirth = dataFromFrenchFormatToInput(formVals.dateOfBirth);
 					this.setState(formVals);
 					grandParentContext.putDataInState();
 				});

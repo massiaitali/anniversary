@@ -1,9 +1,9 @@
 import { h, Component } from 'preact';
 import style from './style';
 import Card from 'preact-material-components/Card';
-import axios from 'axios';
 import LayoutGrid from 'preact-material-components/LayoutGrid';
 import TextField from 'preact-material-components/TextField';
+import { addUserInDb, dataFromInputToFrenchFormat } from '../../Utils'
 import 'preact-material-components/Card/style.css';
 import 'preact-material-components/TextField/style.css';
 import 'preact-material-components/LayoutGrid/style.css';
@@ -20,27 +20,13 @@ export default class Add extends Component {
 		};
 	}
 
-	addUserInDb(newBirthday, dbName, dataName){
-		return axios.post(
-			`${dbName}/${dataName}`,
-			newBirthday,
-			{
-				headers: {
-					Accept: 'application/json',
-					'Content-type': 'application/json'
-				}
-			}
-		);
-	}
-
 	submit() {
 		let formVals = this.state;
 		const oneIsNotCompleted = Object.keys(formVals).some(key => formVals[key] === '');
 		if (!oneIsNotCompleted) {
-			const dateArray = formVals.dateOfBirth.split('-');
-			formVals.dateOfBirth = `${dateArray[2]}/${dateArray[1]}/${dateArray[0]}`;
+			formVals.dateOfBirth = dataFromInputToFrenchFormat(formVals.dateOfBirth);
 			formVals = JSON.stringify(formVals);
-			this.addUserInDb(formVals, 'http://localhost:3000', 'dataAnniversary').then(res => {
+			addUserInDb(formVals, 'http://localhost:3000', 'dataAnniversary').then(res => {
 				this.setState({
 					logo: '',
 					firstName: '',
