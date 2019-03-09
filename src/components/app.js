@@ -4,6 +4,7 @@ import { Router } from 'preact-router';
 import Header from './header';
 import Home from '../routes/home';
 import Add from '../routes/adder';
+import Login from '../routes/login';
 import NotFound from '../routes/404';
 
 export default class App extends Component {
@@ -24,6 +25,7 @@ export default class App extends Component {
 				<Router onChange={this.handleRoute}>
 					<Home path="/" />
 					<Add path="/add" />
+					<Login path="/login" />
 					<NotFound default />
 				</Router>
 			</div>

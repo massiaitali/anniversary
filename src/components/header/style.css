@@ -1,3 +1,6 @@
 .position__right {
     margin-left: 2em;
 }
+.notFound {
+    display: none;
+}

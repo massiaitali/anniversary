@@ -34,6 +34,7 @@ export default class Header extends Component {
 
 	goHome = this.linkTo('/');
 	goAdd = this.linkTo('/add');
+	goLogin = this.linkTo('/login');
 
 	toggleDarkTheme = () => {
 		this.setState(
@@ -70,6 +71,10 @@ export default class Header extends Component {
 				</TopAppBar>
 				<Drawer modal ref={this.drawerRef}>
 					<Drawer.DrawerContent>
+						<Drawer.DrawerItem selected={props.selectedRoute === '/login'} onClick={this.goLogin}>
+							<List.ItemGraphic>person_pin</List.ItemGraphic>
+							Profil
+						</Drawer.DrawerItem>
 						<Drawer.DrawerItem selected={props.selectedRoute === '/'} onClick={this.goHome}>
 							<List.ItemGraphic>home</List.ItemGraphic>
 							Accueil

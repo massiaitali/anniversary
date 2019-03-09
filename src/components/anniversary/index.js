@@ -30,16 +30,16 @@ export default class Anniversary extends Component {
 		return (
 			<div className={style.card}>
 				<Card>
-					<div className={style.cardHeader}>
+					<Card.Title className={style.cardHeader}>
 						<div>
 							<img alt={firstName} src={logo} className={style.logo}/>
 							<h2 className=" mdc-typography--title">{firstName} {lastName}</h2>
 						</div>
 						<div className=" mdc-typography--caption">Dans {nbDays} jours</div>
-					</div>
-					<div className={style.cardBody}>
+					</Card.Title>
+					<Card.Body className={style.cardBody}>
 						Née le {dateOfBirth} à {placeOfBirth}
-					</div>
+					</Card.Body>
 					<Card.Actions>
 						<Card.ActionIcons>
 							<Editer

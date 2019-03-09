@@ -55,8 +55,7 @@ export default class Add extends Component {
 								<div className={style.cardBody}>
 									<div className={style.fieldInput}>
 										<TextField
-											helperText="Url du logo"
-											helperTextPersistent
+											label="Url du logo"
 											type="text"
 											fullwidth
 											onKeyUp={(e) => this.addValueInState(e, 'logo')}
@@ -65,8 +64,7 @@ export default class Add extends Component {
 									</div>
 									<div className={style.fieldInput}>
 										<TextField
-											helperText="Prenom"
-											helperTextPersistent
+											label="Prenom"
 											type="text"
 											fullwidth
 											onKeyUp={(e) => this.addValueInState(e, 'firstName')}
@@ -75,8 +73,7 @@ export default class Add extends Component {
 									</div>
 									<div className={style.fieldInput}>
 										<TextField
-											helperText="Nom"
-											helperTextPersistent
+											label="Nom"
 											type="text"
 											fullwidth
 											onKeyUp={(e) => this.addValueInState(e, 'lastName')}
@@ -95,8 +92,7 @@ export default class Add extends Component {
 									</div>
 									<div className={style.fieldInput}>
 										<TextField
-											helperText="Lieu de naissance"
-											helperTextPersistent
+											label="Lieu de naissance"
 											type="text"
 											fullwidth
 											onKeyUp={(e) => this.addValueInState(e, 'placeOfBirth')}
